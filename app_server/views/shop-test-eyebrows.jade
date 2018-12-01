@@ -1,0 +1,31 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+    script(src='../javascripts/clmtrackr.js')
+    script(src='../javascripts/Stats.js')
+    script(src='../javascripts/utils.js')
+    script.
+        window.onload = function () {
+            startTracking("#483227", "eyebrows")
+        };
+
+    .row.page-header: .col-lg-12
+        h1= pageHeader.title
+
+    .row
+        .col-xs-12.col-md-12
+            #container.video
+                video#videoel(width='400', height='400', preload='auto', loop='', playsinline='', autoplay='')
+                canvas#overlay(width='400', height='400')
+    .row
+        .col-xs-12.col-md-3
+            #colorsList
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_48782.jpg', onclick='changeColor("#483227")')
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_48961.jpg', onclick='changeColor("#696866")')
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_49443.jpg', onclick='changeColor("#A88D6D")')
+                img(src='https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1209654/300/200/m1/fpc/wm0/ea2nx7wphvvzaq2ntnsodb7tk5i0e9jvtsfwdaxc0bebmuahcertfnrt385donvg-.jpg?1461585825&s=c2481f2ea869c9b3cfc86ad33a358842', onclick='changeColor("#FF0000")', width='92', height='48')
+
+
+                script(src='../javascripts/tracking.js')

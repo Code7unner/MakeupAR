@@ -1,0 +1,12 @@
+.review {padding-bottom: 5px;}
+.panel-body.review-container {padding-top: 0;}
+.review-header {margin-bottom: 10px;}
+.reviewAuthor {margin: 0 5px;}
+.reviewTimestamp {color: #ccc;}
+
+#container.video {width: 400px; height: 300px; position: relative; margin: 0;}
+
+#overlay {width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 999}
+#videoel {width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 900;}
+
+img {border-radius: 10%;}

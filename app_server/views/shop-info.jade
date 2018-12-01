@@ -1,0 +1,44 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+    .row.page-header: .col-lg-12
+        h1= pageHeader.title
+
+    .row
+        .col-xs-12.col-md-9
+            .row
+                .col-xs-12.col-sm-6
+                    .panel.panel-primary
+                        .panel-heading
+                            a.btn.btn-default.pull-right(href="/shop/range") Test products
+                            h2.panel-title  Facilities
+                        .panel-body
+                            each facility in shop.facilities
+                                span.label.label-warning
+                                    span.glyphicon.glyphicon-ok
+                                    | &nbsp;#{facility}
+                                | &nbsp;
+
+            .row
+                .col-xs-12
+                    .panel.panel-primary.review-panel
+                        .panel-heading
+                            a.btn.btn-default.pull-right(href="/shop/review/new") Add review
+                            h2.panel-title Customer reviews
+                        .panel-body.review-container
+                            each review in shop.reviews
+                                .row
+                                    .review
+                                        .well.well-sm.review-header
+                                            span.rating
+                                                +outputRating(shop.rating)
+                                            span.reviewAuthor #{review.author}
+                                            small.reviewTimestamp #{review.timestamp}
+                                        .col-xs-12
+                                            p !{(review.reviewText).replace(/\n/g, '<br/>')}
+
+        .col-xs-12.col-md-3
+            p.lead #{sidebar.context}
+            p= sidebar.callToAction

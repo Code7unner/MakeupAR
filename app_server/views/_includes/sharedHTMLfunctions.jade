@@ -1,0 +1,7 @@
+mixin outputRating(rating)
+    - var stars = rating
+    - var n = 0
+    while n++ < stars
+        span.glyphicon.glyphicon-star
+    while n++ <= 5
+        span.glyphicon.glyphicon-star-empty

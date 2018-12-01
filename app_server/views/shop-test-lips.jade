@@ -1,0 +1,33 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+    script(src='../javascripts/clmtrackr.js')
+    script(src='../javascripts/Stats.js')
+    script(src='../javascripts/utils.js')
+    script.
+        window.onload = function () {
+            startTracking("#8F393A", "lips")
+        };
+
+    .row.page-header: .col-lg-12
+        h1= pageHeader.title
+
+    .row
+        .col-xs-12.col-md-12
+            #container.video()
+                video#videoel(width='400', height='400', preload='auto', loop='', playsinline='', autoplay='')
+                canvas#overlay(width='400', height='400')
+    .row
+        .col-xs-12.col-md-3
+            #colorsList
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_11396.jpg', onclick='changeColor("#8F393A")')
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_13546.jpg', onclick='changeColor("#B2244C")')
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_16353.jpg', onclick='changeColor("#BA1F2D")')
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_16901.jpg', onclick='changeColor("#9C4153")')
+                img(src='https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/assets/ru-ru/images/shade/shade_17702.jpg', onclick='changeColor("#9B2E41")')
+                img(src='https://www.colorcombos.com/images/colors/00FF00.png', onclick='changeColor("#00FF00")', width='92', height='48')
+
+
+                script(src='../javascripts/tracking.js')
